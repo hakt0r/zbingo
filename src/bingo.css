@@ -1,5 +1,6 @@
 body {
   background-color: rgb(58, 58, 58) !important;
+  overflow: hidden;
 }
 
 .MuiTableCell-body.bingo {
@@ -121,6 +122,6 @@ body {
   height: 100%;
 }
 
-.win .blue {
+.win .MuiTableCell-body.bingo.blue {
   background-color: green;
 }
