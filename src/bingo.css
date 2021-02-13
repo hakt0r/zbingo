@@ -1,0 +1,122 @@
+body {
+  background-color: rgb(58, 58, 58) !important;
+}
+
+.MuiTableCell-body.bingo {
+  width: 18vw;
+  height: 18vh;
+  border-radius: 1vh;
+  background-color: lightgray;
+  margin: 0.5vmin;
+  box-sizing: border-box;
+  display: inline-block;
+  text-align: center;
+  overflow: hidden;
+  font-size: 2vmin;
+  vertical-align: middle;
+  border: none;
+}
+
+.MuiTableCell-body.bingo.blue {
+  background-color: #1b39ca;
+  color: white;
+}
+
+.MuiTable-root.bingo {
+  width: auto;
+  height: auto;
+  user-select: none;
+}
+
+.bingo.container {
+  position: absolute;
+  width: max-content;
+  height: max-content;
+  top:  50vh;
+  left: 50vw;
+  transform: translate(-50%,-50%);
+}
+
+.menuButton {
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 50vh;
+  color: white;
+  transform: translate(0,-50%);
+}
+
+@media ( orientation: landscape ){
+  .menuButton {
+    width: 52px;
+    box-shadow: inset rgba(0, 0, 0, 0.3) -2px 0 2px;
+    height: 110vh;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+  }
+  .bingo.container {
+    left: calc( ( 100vw - 50px ) / 2 + 50px );
+  }
+  .MuiTableCell-body.bingo {
+    width: calc( ( 85vw - 40px ) / 5 );
+  }
+}
+
+@media ( orientation: portrait ){
+  .menuButton {
+    top: 0px;
+    left: 50vw;
+    transform: translate(-50%);
+    width: 110vw;
+    text-align: center;
+    box-shadow: inset rgba(0, 0, 0, 0.3) 0 -2px 2px;
+  }
+  .bingo.container {
+    top: calc( ( 100vh - 50px ) / 2 + 50px );
+  }
+  .MuiTableCell-body.bingo {
+    height: calc( ( 90vh - 40px ) / 5 );
+  }
+}
+
+.dialog {
+  z-index: 10000;
+  position: fixed;
+  top: 5px;
+  bottom: 5px;
+  left: 5px;
+  right: 5px;
+  width: calc( 100vw - 10px );
+  height: calc( 100vh - 10px );
+  display: grid;
+  grid-template-areas: "top" "bottom";
+  grid-template-rows: auto 1fr;
+}
+
+.dialog .top {
+  grid-area: top;
+  display: flex;
+  flex-flow: row;
+  padding: 5px;
+}
+
+.dialog .top > * {
+  padding: 5px;
+  height: 40px;
+}
+
+.dialog .bottom {
+  grid-area: bottom;
+  padding: 5px;
+}
+
+.dialog .bottom .MuiFormControl-root {
+  height: 100%;
+  max-height: unset;
+}
+
+.dialog .bottom > div,
+.dialog .bottom > div > div {
+  height: 100%;
+}
