@@ -120,3 +120,7 @@ body {
 .dialog .bottom > div > div {
   height: 100%;
 }
+
+.win .blue {
+  background-color: green;
+}

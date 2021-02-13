@@ -14,8 +14,8 @@ import Words from './Words';
 
 function App() {
   const dispatch = useDispatch();
-  const title = useSelector( ({title}) => title );
-  return <>
+  const { title, youwin } = useSelector( ({ title, youwin }) => ({ title, youwin }) );
+  return <div className={ youwin ? 'win' : null }>
   <div className="menuButton">
     <IconButton color="inherit" onClick={ e => dispatch({type:'editorToggle'})}>
       <Edit/>
@@ -32,6 +32,6 @@ function App() {
   </Show>
   <Show stateKey="bingo">
     <Bingo/>
-  </Show></>; }
+  </Show></div>; }
 
 export default App;
