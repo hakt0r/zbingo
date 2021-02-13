@@ -2,6 +2,18 @@
 
 import { createStore } from "redux";
 
+// shuffle function
+
+const bingoShuffle = (words) => { // split words, trim, remove empty, and shuffle
+  const all = words.split('\n').map(w => w.trim()).filter(w => w != '').sort( () => Math.random() - 0.5 ).map( name => ({
+    name,
+    value: false
+  }));
+  const rows = [];
+  for ( let i = 0; i < 5; i++ ) rows.push( all.splice(0,5) );
+  return rows;
+};
+
 // set defaults
 
 const defaults = JSON.stringify({
@@ -10,7 +22,7 @@ const defaults = JSON.stringify({
   wordsInEditor: "",
   titleInEditor: "",
   words: "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25",
-  bingo: false,
+  bingo: bingoCheck("1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25"),
   youwin: false,
   showMenu: false
 });
@@ -28,20 +40,9 @@ const newTitle = urlParams.get('title');
 if ( newWords && newTitle ){
   values.words = newWords;
   values.title = newTitle;
+  values.bingo = bingoShuffle(newWords);
   localStorage.setItem('zbingo_state',JSON.stringify(values));
 }
-
-// shuffle function
-
-const bingoShuffle = (words) => { // split words, trim, remove empty, and shuffle
-  const all = words.split('\n').map(w => w.trim()).filter(w => w != '').sort( () => Math.random() - 0.5 ).map( name => ({
-    name,
-    value: false
-  }));
-  const rows = [];
-  for ( let i = 0; i < 5; i++ ) rows.push( all.splice(0,5) );
-  return rows;
-};
 
 // winning rules
 
