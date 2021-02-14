@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/zbingo/static/css/main.4e14c4d6.chunk.css",
-    "main.js": "/zbingo/static/js/main.873383e4.chunk.js",
-    "main.js.map": "/zbingo/static/js/main.873383e4.chunk.js.map",
+    "main.js": "/zbingo/static/js/main.d3019d35.chunk.js",
+    "main.js.map": "/zbingo/static/js/main.d3019d35.chunk.js.map",
     "runtime-main.js": "/zbingo/static/js/runtime-main.7d952cea.js",
     "runtime-main.js.map": "/zbingo/static/js/runtime-main.7d952cea.js.map",
     "static/js/2.9ad38693.chunk.js": "/zbingo/static/js/2.9ad38693.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.7d952cea.js",
     "static/js/2.9ad38693.chunk.js",
     "static/css/main.4e14c4d6.chunk.css",
-    "static/js/main.873383e4.chunk.js"
+    "static/js/main.d3019d35.chunk.js"
   ]
 }
